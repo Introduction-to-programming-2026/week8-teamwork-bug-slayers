@@ -9,7 +9,10 @@
 
 import csv
 
-with open("favorites.csv", "r") as file:
-    # TODO: Create a csv.DictReader (not csv.reader)
-    # TODO: Loop over rows and print row["language"]
-    pass
+# Open the CSV file one folder up
+with open("../favorites.csv", "r") as file:
+    reader = csv.DictReader(file)  # DictReader automatically uses the header row as keys
+    
+    # Loop over each row
+    for row in reader:
+        print(row["language"])  # access by column name

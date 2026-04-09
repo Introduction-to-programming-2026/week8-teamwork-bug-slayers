@@ -7,4 +7,8 @@
 
 import csv
 
-# TODO: Complete this version (it should be only ~5 lines total)
+# Open CSV one folder up
+with open("../favorites.csv", "r") as file:
+    reader = csv.DictReader(file)  # row is a dictionary
+    for row in reader:
+        print(row["language"])  # print directly

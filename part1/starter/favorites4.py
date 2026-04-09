@@ -11,13 +11,26 @@
 
 import csv
 
-with open("favorites.csv", "r") as file:
+# Open CSV one folder up
+with open("../favorites.csv", "r") as file:
     reader = csv.DictReader(file)
 
-    # TODO: Create three counter variables: scratch, c, python — all starting at 0
+    # Initialize counters
+    scratch = 0
+    c = 0
+    python = 0
 
+    # Count each language
     for row in reader:
         favorite = row["language"]
-        # TODO: Use if/elif to increment the correct counter
+        if favorite == "Scratch":
+            scratch += 1
+        elif favorite == "C":
+            c += 1
+        elif favorite == "Python":
+            python += 1
 
-    # TODO: Print the three counts using f-strings
+    # Print results
+    print(f"Scratch: {scratch}")
+    print(f"C: {c}")
+    print(f"Python: {python}")
